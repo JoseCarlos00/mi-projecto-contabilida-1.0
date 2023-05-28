@@ -15,7 +15,7 @@
       <table class="table table-light">
         <thead class="thead-light">
           <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>correo</th>
@@ -26,7 +26,7 @@
         <tbody>
           <% for( let user = 0; user < users.length; user++ ) { %>
           <tr>
-            <td><%=users[user].id_usuarios %></td>
+            <td><%= users[user].id_usuarios %></td>
             <td><%=users[user].nombre %></td>
             <td><%=users[user].apellido %></td>
             <td><%=users[user].email %></td>

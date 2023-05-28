@@ -8,6 +8,7 @@ var bodyParser = require('body-parser')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var formGastosRouter = require('./routes/formGastos');
+var sessionRouter = require('./routes/sessionRouter');
 const { log } = require('console');
 
 
@@ -28,19 +29,24 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use((req, res, next) => {
-//      console.log(`Pase por aqui`);
-//     if (req.query.log === 'carlos') {
+//     console.log(`Pase por aqui`);
+//     console.log(req.body);
+//     const usuario = req.body
+//     console.log(usuario.user);
+//     if (usuario.user === "jose") {
+//       console.log("llegue a la condicional");
 //       next()
+//       res.render('index')
+
 //     } else {
-//       res.send(`No autorizado 
-//       Enviando al Login
-//       `)
+//       res.render('login')
 //     }
 // })
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/form', formGastosRouter);
+app.use('/sesion', sessionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

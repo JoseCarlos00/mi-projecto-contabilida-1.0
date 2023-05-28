@@ -2,11 +2,38 @@
 <html lang="es">
   <head>
     <%- include('layouts/head') %>
+    <style>
+      .efect-maquina {
+        margin: 50px auto;
+        width: max-content;
+        border-right: 3px solid;
+        font-family: monospace;
+        font-size: 2rem;
+
+        animation: teclear 3s steps(16), efecto 0.5s step-end infinite alternate;
+      }
+
+      @keyframes teclear {
+        from {
+          clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        }
+        to {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+
+      @keyframes efecto {
+        50% {
+          border-color: transparent;
+        }
+      }
+    </style>
   </head>
   <body>
     <header><%- include('layouts/header') %></header>
 
     <div class="container">
+      <h1 class="efect-maquina">Bienvenidos ...</h1>
       <h1><pre>Inicio de pagina</pre></h1>
     </div>
 
