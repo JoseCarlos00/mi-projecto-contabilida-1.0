@@ -7,8 +7,6 @@ router.get('/', usuario.index);
 router.get('/crear', usuario.vistaCrear);
 router.post('/crear', usuario.crear)
 router.post('/borrar/:id', usuario.borrar) 
-// router.post('/borrar/:id', (req, res) => {
-//     console.log(req.params.id);
-// }) 
+
 
 module.exports = router;

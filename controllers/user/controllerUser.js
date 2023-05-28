@@ -3,6 +3,7 @@ var usuariosModel=require('../../model/UsersModel')
 
 module.exports={
     index:function(req, res){
+        console.log("Controller [index]");
         let bandera = false
         usuariosModel.select(conector, function(err, datos){
             // console.log(datos[0].nombre);
@@ -15,9 +16,11 @@ module.exports={
         // }
     },
     vistaCrear:function(req, res) {
+        console.log("Controller [VistaCrear]");
         res.render('createUser')
     },
     crear:function(req, res) {
+        console.log("Controller [crear]");
         usuariosModel.inserInto(conector, req.body, function(err) {
             res.redirect('/users')
         })
