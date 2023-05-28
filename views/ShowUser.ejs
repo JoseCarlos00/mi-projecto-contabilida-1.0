@@ -31,7 +31,25 @@
             <td><%=users[user].apellido %></td>
             <td><%=users[user].email %></td>
             <td><%=users[user].foto %></td>
-            <td>Editar | Borrar</td>
+            <td>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <form
+                  class="form-inline"
+                  action="/users/borrar/<%=users[user].id_usuarios %>"
+                  method="post"
+                >
+                  <input class="btn btn-danger" type="submit" value="Borrar" />
+                  |
+                </form>
+                <form class="form=inline" action="" method="get">
+                  <input
+                    class="btn btn-secondary"
+                    type="submit"
+                    value="Editar"
+                  />
+                </form>
+              </div>
+            </td>
           </tr>
           <% } %>
         </tbody>
