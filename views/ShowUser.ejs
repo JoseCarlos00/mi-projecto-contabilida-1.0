@@ -1,49 +1,43 @@
-
-    <head>
-      <%- include('layouts/head') %>
-
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('layouts/head') %>
   </head>
   <body>
-    <header>
-      <%- include('layouts/header') %>
-    </header>
-    
+    <header><%- include('layouts/header') %></header>
+
     <div class="container">
-        <br />
-        <br />
-        <a href="/users/crear/" class="btn btn-primary">Crear Usuario</a>
-        <br />
-        <br />
-        <table class="table table-light">
-            <thead class="thead-light">
-              <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>correo</th>
-                <th>Foto</th>
-                <th>Funciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for( let user = 0; user < users.length; user++ ) { %>
-                <tr>
-                  <td><%=users[user].id_usuarios %></td>
-                  <td><%=users[user].nombre %></td>
-                  <td><%=users[user].apellido %></td>
-                  <td><%=users[user].email %></td>
-                  <td><%=users[user].foto %></td>
-                  <td>Editar | Borrar</td>
-                </tr>
-                <% } %>
-              
-            </tbody>
-        </table>
+      <br />
+      <br />
+      <a href="/users/crear/" class="btn btn-primary">Crear Usuario</a>
+      <br />
+      <br />
+      <table class="table table-light">
+        <thead class="thead-light">
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>correo</th>
+            <th>Foto</th>
+            <th>Funciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for( let user = 0; user < users.length; user++ ) { %>
+          <tr>
+            <td><%=users[user].id_usuarios %></td>
+            <td><%=users[user].nombre %></td>
+            <td><%=users[user].apellido %></td>
+            <td><%=users[user].email %></td>
+            <td><%=users[user].foto %></td>
+            <td>Editar | Borrar</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
     </div>
 
-
-    <footer>
-      <%- include('layouts/footer') %>
-    </footer>
+    <footer><%- include('layouts/footer') %></footer>
   </body>
 </html>
