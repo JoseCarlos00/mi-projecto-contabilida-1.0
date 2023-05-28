@@ -4,7 +4,12 @@ var usuariosModel=require('../../model/gastosModel')
 
 module.exports = {
     formulario: function(req, res) {
-        res.render('formGastos')
+        usuariosModel.select(conector, function(err, datos) {
+            if(err) { console.log(err); }
+            
+            res.render('formGastos')
+        })
+        
     },
     vistaGastos: function(req, res) {
         console.log("Controller [VistaGatos]");
@@ -21,7 +26,13 @@ module.exports = {
         })
     }
 }
-
+    usuariosModel.select(conector, function(err, datos){
+        if(err) {
+            console.log(err);
+        }
+        res.render('showUser', {users:datos});
+    })
+},
 
 // probando: function(req, res) {
 //     console.log("Controller [Probando]");
