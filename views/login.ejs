@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head') %>
+    <style>
+      body {
+        /* height: 360px; */
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        background-color: #aae3e2;
+
+        background-image: linear-gradient(
+          #aae3e2 0%,
+          #aae3e2 50%,
+          #d9acf5 50%,
+          #d9acf5 100%
+        );
+      }
+
+      figure {
+        margin: 0;
+        height: 72px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="card"
+      style="
+        width: 18rem;
+        height: 360px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.3);
+      "
+    >
+      <figure>
+        <img
+          src="https://www.netskope.com/wp-content/uploads/2021/06/logo-netskope-primary.png"
+          class="card-img-top"
+          alt="logo"
+        />
+      </figure>
+      <div class="card-body">
+        <h5 class="card-title text-center">LOGIN</h5>
+        <form action="/sesion" method="post">
+          <div class="mb-3">
+            <label for="userName" class="form-label">User</label>
+            <input
+              name="user"
+              type="text"
+              class="form-control"
+              id="userName"
+              aria-describedby="usuario"
+            />
+            <!-- <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div> -->
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              name="password"
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
