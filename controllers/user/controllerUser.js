@@ -9,6 +9,6 @@ module.exports={
         })
     },
     crear:function(req, res){
-        res.send('Crear Usuario...');
+        res.render('createUser')
     }
 }
