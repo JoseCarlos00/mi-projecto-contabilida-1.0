@@ -18,17 +18,15 @@ module.exports={
         res.render('createUser')
     },
     crear:function(req, res) {
-        console.log(req.body);
-       console.log("users Crear");
-    //    res.redirect('/users')
+        usuariosModel.inserInto(conector, req.body, function(err) {
+            res.redirect('/users')
+        })
     },
     borrar:function(req, res) {
         usuariosModel.delete(conector, req.params.id, function(err){
             res.redirect('/users')
         })
 
-        // console.log(req.params.id);
-        res.redirect('/users')
     }
     
 }

@@ -7,13 +7,14 @@ module.exports={
         
         
     },
-    delete:function(conecion, id, funcion) {
+    delete:function(conexion, id, funcion) {
         const sql = `DELETE FROM usuarios WHERE id_usuarios=${id}`
-        conecion.query(sql, funcion)
+        conexion.query(sql, funcion)
     },
-    inserinto:function(conexion, funcion) {
-        const sql = `INSERT INTO usuarios ('nombre', 'apellido', 'email', 'passwork') VALUES ()`
+    inserInto:function(conexion, datos, funcion) {
+        // const sql = `INSERT INTO usuarios (nombre, apellido, email, password) VALUES (${datos.nombre},${datos.apellido},${datos.email},${datos.password},)`
+        // conexion.query(sql, funcion)
+        conexion.query("INSERT INTO usuarios (nombre, apellido, email, password) VALUES(?,?,?,?)",[datos.nombre, datos.apellido, datos.email, datos.password], funcion)
     }
-
 
 }
