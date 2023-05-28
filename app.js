@@ -21,17 +21,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req, res, next) => {
-     console.log(`Pase por aqui`);
-    if (req.query.log === 'carlos') {
-      next()
-    } else {
-      res.send(`No autorizado 
-      Enviando al Login
-      `)
-    }
-  
-})
+// app.use((req, res, next) => {
+//      console.log(`Pase por aqui`);
+//     if (req.query.log === 'carlos') {
+//       next()
+//     } else {
+//       res.send(`No autorizado 
+//       Enviando al Login
+//       `)
+//     }
+// })
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/form', formGastosRouter);
