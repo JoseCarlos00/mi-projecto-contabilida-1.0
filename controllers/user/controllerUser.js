@@ -1,5 +1,5 @@
 var conector=require('../../config/conexionDB')
-var usuariosModel=require('../../model/UsersModel')
+var usuariosModel=require('../../model/usersModel')
 
 module.exports={
     index:function(req, res){

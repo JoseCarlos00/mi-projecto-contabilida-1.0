@@ -7,7 +7,7 @@ var bodyParser = require('body-parser')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var formGastosRouter = require('./routes/formGastos');
+var gastosRouter = require('./routes/gastosRouter');
 var sessionRouter = require('./routes/sessionRouter');
 const { log } = require('console');
 
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/form', formGastosRouter);
+app.use('/gastos', gastosRouter);
 app.use('/sesion', sessionRouter);
 
 // catch 404 and forward to error handler

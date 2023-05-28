@@ -37,20 +37,45 @@
           <a
             class="nav-link active"
             aria-current="page"
-            href="http://192.168.1.68:3000/form"
+            href="http://192.168.1.68:3000/gastos/form"
             >Formulario</a
           >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="http://192.168.1.68:3000/gastos/show"
+            >Gastos</a
+          >
+        </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="dropdown" style="margin-right: 60px">
+        <a
+          class="btn btn-ligth dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-user"></i>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="http://192.168.1.68:3000/sesion"
+              >Iniciar Sesión</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="http://192.168.1.68:3000/sesion/singin"
+              >Cerar Sesión</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
