@@ -1,38 +1,36 @@
 var conector=require('../../config/conexionDB')
-var usuariosModel=require('../../model/gastosModel')
+var gastosModel=require('../../model/gastosModel')
 
 
 module.exports = {
     formulario: function(req, res) {
-        usuariosModel.select(conector, function(err, datos) {
-            if(err) { console.log(err); }
-            
-            res.render('formGastos')
-        })
-        
+        res.render('formGastos')
     },
+
     vistaGastos: function(req, res) {
         console.log("Controller [VistaGatos]");
-        res.render('showGastos')
+
+        gastosModel.select(conector, function(err, datos) {
+            if(err) {console.log(err);}
+            const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+            // var opciones = {weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "numeric", hour12:"true"};
+
+            // console.log(datos);
+            res.render('showGastos', {gastos: datos, option: opciones})
+        })
     },
+
     crear: function(req, res) {
         console.log("Controller [Enviar Gastos]");
         // console.log(req.body);
-        usuariosModel.inserInto(conector, req.body, function(err) {
-            if(err) {
-                console.log(err);
-            }
+        gastosModel.inserInto(conector, req.body, function(err) {
+            if(err) { console.log(err); }
+
             res.redirect('/gastos/form')
         })
     }
 }
-    usuariosModel.select(conector, function(err, datos){
-        if(err) {
-            console.log(err);
-        }
-        res.render('showUser', {users:datos});
-    })
-},
 
 // probando: function(req, res) {
 //     console.log("Controller [Probando]");
@@ -43,7 +41,7 @@ module.exports = {
 //         detail: 'OXXO',
 //         monto: '528'
 //     }
-//     usuariosModel.probar(conector, cuerpo, function(err) {
+//     gastosModel.probar(conector, cuerpo, function(err) {
 //         if(err) {
 //             console.log(err);
 //         }

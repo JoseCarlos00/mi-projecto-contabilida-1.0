@@ -12,8 +12,7 @@ module.exports={
         conexion.query(sql, funcion)
     },
     inserInto:function(conexion, datos, funcion) {
-        // const sql = `INSERT INTO usuarios (nombre, apellido, email, password) VALUES (${datos.nombre},${datos.apellido},${datos.email},${datos.password},)`
-        // conexion.query(sql, funcion)
+        
         conexion.query("INSERT INTO usuarios (nombre, apellido, email, password) VALUES(?,?,?,?)",[datos.nombre, datos.apellido, datos.email, datos.password], funcion)
     }
 
