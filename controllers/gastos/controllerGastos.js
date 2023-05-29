@@ -1,3 +1,4 @@
+const { response } = require('express');
 var conector=require('../../config/conexionDB')
 var gastosModel=require('../../model/gastosModel')
 
@@ -13,10 +14,6 @@ module.exports = {
         gastosModel.select(conector, function(err, datos) {
             if(err) {console.log(err);}
             const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-            // var opciones = {weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "numeric", hour12:"true"};
-
-            // console.log(datos);
             res.render('showGastos', {gastos: datos, option: opciones})
         })
     },
@@ -29,6 +26,48 @@ module.exports = {
 
             res.redirect('/gastos/form')
         })
+    },
+    
+    // optenerSemanas: function(req, res) {
+
+    //     console.log(req.body);
+    //     let numero = parseInt(req.body.valor)
+    //     console.log(typeof numero);
+    //     // gastosModel.filtrarPorSemana(conector, req.body, function(err, datos) {
+            
+    //     //     if(err) {console.log(err);}
+
+    //     //     // const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+    //     //     res.render('reportes', {semanas: datos})
+        
+    //     // })
+    //     console.log("[OptenerSemans]");
+    //     res.redirect('/reportes')
+
+    // },
+
+    vistaSemanas: function(req, res) {
+        console.log("aqui");
+        console.log("Controller [Vista Semanas]");
+
+        gastosModel.selectSemanas(conector, function(err, datos) {
+            
+            currentdate = new Date();
+             var oneJan = new Date(currentdate.getFullYear(), 0, 1);
+            var numberOfDays = Math.floor(
+             (currentdate - oneJan) / (24 * 60 * 60 * 1000)
+            );
+            var result = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
+
+
+
+            if(err) {console.log(err);}
+            const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            res.render('reportes', {gastos: datos, option: opciones, semanaActual: result})
+    })
+
+
     }
 }
 
@@ -47,4 +86,4 @@ module.exports = {
 //         }
 //         res.redirect('/gastos/show')
 //     })
-// }
+//

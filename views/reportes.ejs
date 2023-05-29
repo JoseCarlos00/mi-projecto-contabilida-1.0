@@ -28,29 +28,84 @@
 
   <body>
     <%- include('layouts/header') %>
+    <div class="container mb-3"></div>
+
+    <div class="container principal">
+      <h1>Semana Actual</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">ID</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Detalles</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Semana</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for( let gasto = 0; gasto < gastos.length; gasto++ ) { %> <% if
+          (semanaActual === gastos[gasto].semana) { %>
+          <tr>
+            <th scope="row"><%=gastos[gasto].id %></th>
+            <td><%=gastos[gasto].categoria%></td>
+            <td><%=gastos[gasto].usuario%></td>
+            <td><%=gastos[gasto].fecha.toLocaleDateString('es-ES',option)%></td>
+            <td><%=gastos[gasto].detalles%></td>
+            <td><%=gastos[gasto].monto%></td>
+            <td><%=gastos[gasto].semana%></td>
+          </tr>
+          <% } %> <% } %>
+        </tbody>
+      </table>
+    </div>
 
     <div class="container principal">
       <table class="table table-striped">
         <thead>
           <tr class="table-dark">
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">ID</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Detalles</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Semana</th>
           </tr>
         </thead>
         <tbody>
+          <% for( let gasto = 0; gasto < gastos.length; gasto++ ) { %>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row"><%=gastos[gasto].id %></th>
+            <td><%=gastos[gasto].categoria%></td>
+            <td><%=gastos[gasto].usuario%></td>
+            <td><%=gastos[gasto].fecha.toLocaleDateString('es-ES',option)%></td>
+            <td><%=gastos[gasto].detalles%></td>
+            <td><%=gastos[gasto].monto%></td>
+            <td><%=gastos[gasto].semana%></td>
           </tr>
-          <tr></tr>
+          <% } %>
         </tbody>
       </table>
     </div>
 
     <footer><%- include('layouts/footer') %></footer>
+    <input type="submit" value="" />
+    <!-- <script>
+      function iniciar() {
+        currentdate = new Date();
+        var oneJan = new Date(currentdate.getFullYear(), 0, 1);
+        var numberOfDays = Math.floor(
+          (currentdate - oneJan) / (24 * 60 * 60 * 1000)
+        );
+        var result = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
+
+        document.querySelector(
+          "body > div.container.mb-3"
+        ).innerHTML = `<a class="btn btn-primary" href="" role="button">${result}</a>`;
+      }
+      window.addEventListener("load", iniciar);
+    </script> -->
   </body>
 </html>
