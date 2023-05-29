@@ -8,4 +8,6 @@ router.post('/form', gastos.crear)
 
 router.get('/show', gastos.vistaGastos)
 
+router.get('/reportes', (req, res) => res.render('reportes') )
+
 module.exports = router;
