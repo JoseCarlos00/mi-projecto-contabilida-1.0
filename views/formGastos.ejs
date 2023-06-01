@@ -13,7 +13,7 @@
           <label for="categori">Seleciona una categoria</label>
           <select
             name="categoria"
-            size="3"
+            size="5"
             class="form-control"
             id="categori"
             required
@@ -22,7 +22,7 @@
             <option value="2">Deudas</option>
             <option value="3">Oxxo</option>
             <option value="4">Entretenimiento</option>
-            <option value="5">Escuela</option>
+            <option value="5">Cervezas</option>
             <option value="6">Fines De Semana</option>
             <option value="7">Gastos Fijos</option>
             <option value="8">Otros</option>
@@ -30,11 +30,13 @@
             <option value="10">Salud</option>
             <option value="11">Transporte</option>
             <option value="12">Diarios</option>
+            <option value="13">Escuela</option>
           </select>
         </div>
         <br />
-        <div class="mb-3">
-          <input
+        <!-- <div class="mb-3"> -->
+        <div class="form-group">
+          <!-- <input
             class="form-control form-control-sm form-control-plaintext"
             type="text"
             value="1"
@@ -42,7 +44,20 @@
             name="usuario"
             readonly
             hidden
-          />
+          /> -->
+          <label for="categori">Selecione un Usuario</label>
+          <select
+            name="usuario"
+            size="2"
+            class="form-control"
+            id="user"
+            required
+          >
+            <option value="1">ROOT</option>
+            <option value="2">Jose Carlos</option>
+            <option value="3">Hector Ivan</option>
+            <option value="4">Xitlally</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="fecha" class="form-label">Fecha de la Compra</label>
