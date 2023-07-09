@@ -65,8 +65,8 @@ module.exports = {
             if(err) {console.log(err);}
             const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             res.render('reportes', {gastos: datos, option: opciones, semanaActual: result})
-    })
-
+        })
+        
 
     }
 }
