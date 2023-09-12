@@ -28,21 +28,6 @@ app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use((req, res, next) => {
-//     console.log(`Pase por aqui`);
-//     console.log(req.body);
-//     const usuario = req.body
-//     console.log(usuario.user);
-//     if (usuario.user === "jose") {
-//       console.log("llegue a la condicional");
-//       next()
-//       res.render('index')
-
-//     } else {
-//       res.render('login')
-//     }
-// })
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/gastos', gastosRouter);
