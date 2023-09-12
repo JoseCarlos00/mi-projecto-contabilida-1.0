@@ -6,4 +6,6 @@ passport.use('local-signup', new localStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
-}, (req, email, password) => {}))
+}, (req, email, password, done) => {
+  
+}))
