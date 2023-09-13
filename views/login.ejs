@@ -37,31 +37,27 @@
         top: 50%;
         transform: translate(-50%, -50%);
         background: rgba(0, 0, 0, 0.3);
-      "
-    >
+      ">
       <figure>
         <img
           src="https://www.netskope.com/wp-content/uploads/2021/06/logo-netskope-primary.png"
           class="card-img-top"
-          alt="logo"
-        />
+          alt="logo" />
       </figure>
       <div class="card-body">
         <h5 class="card-title text-center">LOGIN</h5>
-        <form action="/sesion" method="post">
+
+        <form action="/signup" method="post">
           <div class="mb-3">
-            <label for="userName" class="form-label">User</label>
+            <label for="userEmail" class="form-label">User</label>
             <input
-              name="user"
+              name="userEmail"
               type="text"
               class="form-control"
-              id="userName"
-              aria-describedby="usuario"
-            />
-            <!-- <div id="emailHelp" class="form-text">
-              We'll never share your email with anyone else.
-            </div> -->
+              id="userEmail"
+              aria-describedby="usuario" />
           </div>
+
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
               >Password</label
@@ -70,9 +66,9 @@
               name="password"
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
-            />
+              id="exampleInputPassword1" />
           </div>
+
           <button type="submit" class="btn btn-primary">Iniciar sesión</button>
         </form>
       </div>

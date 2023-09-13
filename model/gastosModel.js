@@ -14,7 +14,7 @@ module.exports={
         conexion.query(sql, funcion);
     },
 
-    inserInto:function (conexion,datos, funcion) {
+    inserInto:function (conexion, datos, funcion) {
         console.log("Model [Inser Into]");
 
         let categoriaID = parseInt(datos.categoria)
