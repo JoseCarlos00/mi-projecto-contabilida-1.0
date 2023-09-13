@@ -93,7 +93,6 @@ launch.json
 config/conexionDB.js
 ## dist
 dist
-
 ### Node ###
 # Logs
 logs
