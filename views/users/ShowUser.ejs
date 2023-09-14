@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('layouts/head') %>
+    <%- include('../layouts/head') %>
+    <style>
+      td form input {
+        width: 64px;
+        height: 30px;
+        padding: 1px !important;
+      }
+    </style>
   </head>
   <body>
-    <header><%- include('layouts/header') %></header>
+    <header><%- include('../layouts/header') %></header>
 
     <div class="container">
       <br />
@@ -36,22 +43,18 @@
                 <form
                   class="form-inline"
                   action="/users/borrar/<%=users[user].id_usuarios %>"
-                  method="post"
-                >
-                  <input
-                    class="btn btn-danger"
-                    type="submit"
-                    value="Borrar"
-                    disabled
-                  />
-                  |
+                  method="post">
+                  <input class="btn btn-danger" type="submit" value="Borrar" />
+                  &nbsp; | &nbsp;
                 </form>
-                <form class="form=inline" action="" method="get">
+                <form
+                  class="form-inline"
+                  action="/users/edit/<%=users[user].id_usuarios %>"
+                  method="post">
                   <input
                     class="btn btn-secondary"
                     type="submit"
-                    value="Editar"
-                  />
+                    value="Editar" />
                 </form>
               </div>
             </td>
@@ -61,6 +64,6 @@
       </table>
     </div>
 
-    <footer><%- include('layouts/footer') %></footer>
+    <footer><%- include('../layouts/footer') %></footer>
   </body>
 </html>

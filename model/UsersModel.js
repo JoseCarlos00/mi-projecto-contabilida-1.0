@@ -3,9 +3,11 @@ module.exports={
         const sql = "SELECT * FROM usuarios"
         await conexion.query(sql, funcion);
     },
-    update:function(conexion, funcion) {
-        
-        
+    selectID: async function (conexion, id, funcion) {
+        await conexion.query(`select * FROM usuarios WHERE id_usuarios=${id}`, funcion); 
+    },
+    update:async function(conexion, id, user, funcion) {
+        await conexion.query("UPDATE usuarios SET ? WHERE id_usuarios=?",[user, id], funcion);
     },
     delete:async function(conexion, id, funcion) {
         const sql = `DELETE FROM usuarios WHERE id_usuarios=${id}`

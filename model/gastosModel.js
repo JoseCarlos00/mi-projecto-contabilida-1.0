@@ -17,29 +17,13 @@ module.exports={
     inserInto:function (conexion, datos, funcion) {
         console.log("Model [Inser Into]");
 
-        let categoriaID = parseInt(datos.categoria)
-        let usuarioID = parseInt(datos.usuario)
-        let fecha = datos.fecha
-        let detalles = datos.detail
-        let cantidad = parseFloat(datos.monto)
-        conexion.query("INSERT INTO detalles_gastos (id_categorias_gastos, id_usuarios, fecha, detalles, monto) VALUES (?,?,?,?,?)",[categoriaID,usuarioID,fecha,detalles,cantidad], funcion);
+        const {categoria, usuario, fecha, detail, monto} = datos;
+
+        conexion.query("INSERT INTO detalles_gastos (id_categorias_gastos, id_usuarios, fecha, detalles, monto) VALUES (?,?,?,?,?)",[categoria,usuario,fecha,detail,parseFloat(monto)], funcion);
        
     },
 
 }
-
-
-// probar:function(conexion, datos, funcion) {
-//     console.log("Model [probando]");
-//     console.log(datos);
-//     // console.log(datos.caregoria.value());
-//     let categoriaID = parseInt(datos.categoria)
-//     let usuarioID = parseInt(datos.usuario)
-//     let fecha = datos.fecha
-//     let detalles = datos.detail
-//     let cantidad = parseFloat(datos.monto)
-//     conexion.query("INSERT INTO detalles_de_gastos (id_categorias_gastos, id_usuarios, fecha, detalles, monto) VALUES (?,?,?,?,?)",[categoriaID,usuarioID,fecha,detalles,cantidad], funcion);
-// }
 
 
 
